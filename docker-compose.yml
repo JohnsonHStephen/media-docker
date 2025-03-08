@@ -6,6 +6,7 @@ services:
       - PUID=1000
       - PGID=1000
       - VERSION=docker
+      - PLEX_CLAIM=${PLEX_CLAIM}
     volumes:
       - /home/sjohnson/media/storage/Configs:/config
       - /home/sjohnson/media/storage/TV:/tv
@@ -53,6 +54,8 @@ services:
     container_name: qbittorrentvpn
     privileged: true   
     environment:
+      - VPN_USERNAME=${VPN_USERNAME}
+      - VPN_PASSWORD=${VPN_PASSWORD}
       - PUID=1000
       - PGID=1000
       - WEBUI_PORT_ENV=8080
