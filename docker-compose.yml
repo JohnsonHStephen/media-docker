@@ -25,6 +25,8 @@ services:
     volumes:
       - /home/sjohnson/media/storage/Configs/Jackett:/config
       - /home/sjohnson/media/storage/Torrents:/downloads
+    ports:
+      - 9117:9117
     restart: unless-stopped
     networks:
       - network
@@ -34,6 +36,8 @@ services:
     hostname: organizr
     image: organizr/organizr
     restart: unless-stopped
+    ports:
+        - 90:80
     volumes:
         - /home/sjohnson/media/storage/Configs/Organizr:/config
     environment:
@@ -59,6 +63,10 @@ services:
       - VPN_ENABLED=yes
       - LAN_NETWORK=10.0.0.0/24
       - NAME_SERVERS=1.1.1.1,1.0.0.1
+    ports:
+      - 8070:8080
+      - 8999:8999
+      - 8999:8999/udp
     volumes:
       - /home/sjohnson/media/storage/Configs/QBittorrentVPN:/config
       - /home/sjohnson/media/storage/Torrents:/downloads
@@ -79,6 +87,8 @@ services:
       - /home/sjohnson/media/storage/Configs/Radarr:/config
       - /home/sjohnson/media/storage/Downloads:/downloads
       - /home/sjohnson/media/storage/Movies:/Movies
+    ports:
+      - 7878:7878
     restart: unless-stopped
     networks:
       - network
@@ -95,7 +105,8 @@ services:
       - /media/storage/Downloads:/downloads
       - /media/storage/Downloads/Incomplete:/incomplete-downloads
     ports:
-      - 8080:8080
+      - 8181:8080
+      - 9191:9090
     restart: unless-stopped
     networks:
       - network
@@ -112,6 +123,8 @@ services:
       - /media/storage/Configs/Sonarr:/config
       - /media/storage/Downloads:/Downloads
       - /media/storage/TV:/TV
+    ports:
+      - 8989:8989
     restart: unless-stopped
     networks:
       - network
