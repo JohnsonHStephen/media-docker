@@ -101,9 +101,9 @@ services:
       - PGID=1000
       - TZ=America/Toronto
     volumes:
-      - /media/storage/Configs/Sabnzbd:/config
-      - /media/storage/Downloads:/downloads
-      - /media/storage/Downloads/Incomplete:/incomplete-downloads
+      - /home/sjohnson/media/storage/Configs/Sabnzbd:/config
+      - /home/sjohnson/media/storage/Downloads:/downloads
+      - /home/sjohnson/media/storage/Downloads/Incomplete:/incomplete-downloads
     ports:
       - 8181:8080
       - 9191:9090
@@ -120,9 +120,9 @@ services:
       - TZ=America/Toronto
       - UMASK_SET=022
     volumes:
-      - /media/storage/Configs/Sonarr:/config
-      - /media/storage/Downloads:/downloads
-      - /media/storage/TV:/TV
+      - /home/sjohnson/media/storage/Configs/Sonarr:/config
+      - /home/sjohnson/media/storage/Downloads:/downloads
+      - /home/sjohnson/media/storage/TV:/TV
     ports:
       - 8989:8989
     restart: unless-stopped
