@@ -9,8 +9,8 @@ services:
       - PLEX_CLAIM=${PLEX_CLAIM}
     volumes:
       - /home/sjohnson/media/storage/Configs:/config
-      - /home/sjohnson/media/storage/TV:/tv
-      - /home/sjohnson/media/storage/Movies:/movies
+      - /home/sjohnson/media/storage/TV:/TV
+      - /home/sjohnson/media/storage/Movies:/Movies
     restart: unless-stopped
     networks:
       - network
