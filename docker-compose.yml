@@ -63,7 +63,7 @@ services:
       - LAN_NETWORK=10.0.0.0/24
       - NAME_SERVERS=1.1.1.1,1.0.0.1
     ports:
-      - 8080:8080
+      - 8070:8080
       - 8999:8999
       - 8999:8999/udp
     volumes:
