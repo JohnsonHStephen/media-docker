@@ -121,7 +121,7 @@ services:
       - UMASK_SET=022
     volumes:
       - /media/storage/Configs/Sonarr:/config
-      - /media/storage/Downloads:/Downloads
+      - /media/storage/Downloads:/downloads
       - /media/storage/TV:/TV
     ports:
       - 8989:8989
