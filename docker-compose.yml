@@ -13,6 +13,7 @@ services:
       - /home/sjohnson/media/storage/Configs:/config
       - /home/sjohnson/media/storage/TV:/TV
       - /home/sjohnson/media/storage/Movies:/Movies
+      - /home/sjohnson/media/storage/Books:/books
     restart: unless-stopped
     networks:
       - network
