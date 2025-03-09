@@ -131,6 +131,21 @@ services:
     networks:
       - network
 
+  overseerr:
+    image: lscr.io/linuxserver/overseerr:latest
+    container_name: overseerr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Toronto
+    ports:
+      - 5055:5055
+    volumes:
+      - /home/sjohnson/media/storage/Configs/Overseerr:/config
+    restart: unless-stopped
+    networks:
+      - network
+    
 networks:
   network:
     name: my-bridge-network
