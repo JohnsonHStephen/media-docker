@@ -146,6 +146,23 @@ services:
     networks:
       - network
     
+  readarr:
+    image: lscr.io/linuxserver/readarr:develop
+    container_name: readarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Toronto
+    volumes:
+      - /home/sjohnson/media/storage/Configs/Readarr:/config
+      - /home/sjohnson/media/storage/Books:/books
+      - /home/sjohnson/media/storage/Downloads:/downloads
+    ports:
+      - 8787:8787
+    restart: unless-stopped
+    networks:
+      - network
+
 networks:
   network:
     name: my-bridge-network
